@@ -1,0 +1,17 @@
+.Loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+
+    .Loader-icon {
+        color: white;
+        opacity: 1;
+        animation: fade 2s linear forwards infinite;
+    }
+}
+
+@keyframes fade {
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+}
