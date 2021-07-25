@@ -1,5 +1,23 @@
+* {
+  margin: 0;padding: 0;
+}
+
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+
+.splash-container .loading-icon {
+  color: white;
+}
+
 .App {
   text-align: center;
+  background-color: rgb(103, 163, 237);
+  height: 100vh;
+  box-sizing: content-box;
 }
 
 .App-logo {
