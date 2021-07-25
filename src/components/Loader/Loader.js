@@ -6,7 +6,7 @@ export default function Loader() {
     return (
         <div className="Loader">
             <span className="Loader-icon">
-                <WiDayCloudy size={200}/>
+                <WiDayCloudy aria-label="Weather loader" size={200}/>
             </span>
         </div>
     )
