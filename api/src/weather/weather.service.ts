@@ -27,7 +27,6 @@ export class WeatherService {
       return response.data;
     } catch (e) {
       // TODO: Add a custom logger to see better errors
-      console.log(e);
       throw new NotFoundException('Location was not found');
     }
   }
@@ -46,8 +45,7 @@ export class WeatherService {
       return response.data;
     } catch (e) {
       // TODO: Add a custom logger to see better errors
-      console.log(e);
-      throw new NotFoundException('Location forecast not found');
+      throw new NotFoundException('Location forecast was not found');
     }
   }
 }
