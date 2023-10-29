@@ -2,8 +2,7 @@ import { useState, useEffect, ChangeEvent, useCallback } from 'react';
 
 import { optionType, forecastType } from '../types/index';
 
-const BASE_URL = import.meta.env.VITE_OPENWEATHER_API_URL;
-const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+const API_URL = import.meta.env.VITE_WEATHER_API_URL;
 
 const useWeatherData = () => {
   const [city, setCity] = useState<optionType | null>(null);
@@ -13,26 +12,28 @@ const useWeatherData = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getActualPosition = useCallback(() => {
+    setIsLoading(true);
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        setIsLoading(true);
         const { latitude, longitude } = position.coords;
-        setSearchTerm('Actual location');
         getForecast({ name: '', country: '', lat: latitude, lon: longitude });
       });
     } else {
+      setIsLoading(false);
       console.log('Geolocation is not available in this browser.');
     }
   }, []);
 
+  // TODO: when there is an error, should show a message
+  // TODO: do not search on each keypress, only when stop
   const getSearchOptions = async (term: string) => {
-    // limit chars to start searching cities
     if (term.length > 2) {
-      fetch(
-        `${BASE_URL}/geo/1.0/direct?q=${term.trim()}&limit=5&lang=en&appid=${API_KEY}`,
-      )
+      fetch(`${API_URL}/weather/search?locationQuery=${term.trim()}`)
         .then(res => res.json())
-        .then(data => setSearchOptions(data))
+        .then(data => {
+          console.log(data);
+          setSearchOptions(data);
+        })
         .catch(e => console.log({ e }));
     } else {
       setSearchOptions([]);
@@ -45,16 +46,17 @@ const useWeatherData = () => {
     getForecast(city);
   };
 
+  // TODO: when there is an error, should show a message
   const getForecast = (data: optionType) => {
     setIsLoading(true);
     fetch(
-      `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=${API_KEY}`,
+      `${API_URL}/weather/forecast?latitude=${data.lat}&longitude=${data.lon}`,
     )
       .then(res => res.json())
       .then(data => {
         const forecastData = {
           ...data.city,
-          list: data.list.slice(0, 16),
+          list: data.list,
         };
 
         setWeatherData(forecastData);
