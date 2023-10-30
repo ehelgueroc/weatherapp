@@ -15,6 +15,8 @@ This app that let the user find automatically the local weather via geolocalizat
 - **Backend:**
   - NestJS
   - Typescript
+ 
+Learn more about this app in [this document](https://www.notion.so/Weather-App-91bf1b90a7974c84800ebdd302a4a0d3?pvs=4)
 
 ## :hand: Steps before running the app
 
