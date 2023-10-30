@@ -24,7 +24,7 @@ const useWeatherData = () => {
   }, []);
 
   // TODO: when there is an error, should show a message
-  // TODO: do not search on each keypress, only when stop
+  // TODO: do not search on each keypress, only when user stops writting to save requests
   const getSearchOptions = async (term: string) => {
     if (term.length > 2) {
       fetch(`${API_URL}/weather/search?locationQuery=${term.trim()}`)
@@ -37,12 +37,6 @@ const useWeatherData = () => {
     } else {
       setSearchOptions([]);
     }
-  };
-
-  const handleFormSubmit = () => {
-    if (!city) return;
-
-    getForecast(city);
   };
 
   // TODO: when there is an error, should show a message
@@ -66,6 +60,7 @@ const useWeatherData = () => {
 
   const handleOptionSelect = (option: optionType) => {
     setCity(option);
+    getForecast(option);
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -96,7 +91,6 @@ const useWeatherData = () => {
     searchTerm,
     isLoading,
     handleOptionSelect,
-    handleFormSubmit,
     handleInputChange,
     getActualPosition,
     handleOnClear,

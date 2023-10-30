@@ -10,7 +10,6 @@ type SearchBarProps = {
   options: [];
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onOptionSelect: (option: optionType) => void;
-  onSubmit: () => void;
   placeholder?: string;
   onClear: () => void;
 };
@@ -20,7 +19,6 @@ const SearchBar = ({
   options,
   onInputChange,
   onOptionSelect,
-  onSubmit,
   placeholder = '',
   onClear,
 }: SearchBarProps) => (
@@ -38,12 +36,6 @@ const SearchBar = ({
 
       <Suggestions options={options} onSelect={onOptionSelect} />
 
-      <button
-        className=" border-2 border-zinc-100  text-zinc-100 px-2 py-1 cursor-pointer"
-        onClick={onSubmit}
-      >
-        search
-      </button>
       <button
         className=" rounded-r-md border-2 border-zinc-100  text-zinc-100 px-2 py-1 cursor-pointer"
         onClick={onClear}
