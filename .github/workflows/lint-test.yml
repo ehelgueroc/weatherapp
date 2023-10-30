@@ -15,26 +15,24 @@ on:
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Copy repository
+        uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
 
-      - name: Lint and test NestJS app
-        working-directory: api
-        run: |
-          npm install
-          npm run lint
-          npm test
+      - name: Install dependencies
+        run: npm install
 
-      - name: Lint and test ReactJS app
-        working-directory: client
-        run: |
-          npm install
-          npm run lint
-          npm test
+      - name: Lint code
+        run: npm lint
+
+      - name: Run tests
+        run: npm test
