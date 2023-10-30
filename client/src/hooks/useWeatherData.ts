@@ -20,7 +20,6 @@ const useWeatherData = () => {
       });
     } else {
       setIsLoading(false);
-      console.log('Geolocation is not available in this browser.');
     }
   }, []);
 
