@@ -1,25 +1,31 @@
 # :sun_with_face: Weather APP
-This is a weather app that let the user find the local weather via geolocalization or any other city weather/forecast through a search bar
+This app that let the user find automatically the local weather via geolocalization or search any other city weather/forecast.
 
 ## :camera: Preview
 ![Screenshot 2023-10-30 at 02 33 17](https://github.com/ehelgueroc/weatherapp/assets/10067295/b1d535a9-9348-444f-9162-f90dad506fcd)
 
 ## :rainbow: Stack
 - **Frontend:**
-  - ReactJS, Vite, Typescript, Tailwind, Jest, React Testing library
+  - ReactJS
+  - Vite
+  - Typescript
+  - Tailwind
+  - Jest
+  - React Testing library
 - **Backend:**
-  - NestJS, Typescript
+  - NestJS
+  - Typescript
 
 ## :hand: Steps before running the app
 
-You need to create an .env file on the client and API folders
+You need to create an .env file on the **client** and **api** folders
 
-**API**
+**Api folder**
 - PORT=3000
 - OPENWEATHER_API_KEY= key generated on [openweather page](https://openweathermap.org/api)
 - OPENWEATHER_API_BASE_URL=https://api.openweathermap.org
 
-**Client**
+**Client folder**
 - VITE_WEATHER_API_URL: http://localhost:3000
 
 ## :runner: Run the app
