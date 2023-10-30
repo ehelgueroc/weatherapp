@@ -34,7 +34,6 @@ jobs:
       - name: Lint
         working-directory: api
         run: npm run lint
-          npm test
 
       - name: Tests
         working-directory: api
