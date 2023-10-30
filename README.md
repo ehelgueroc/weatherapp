@@ -1,18 +1,17 @@
-# Weather APP
+# :sun_with_face: Weather APP
 This is a weather app that let the user find the local weather via geolocalization or any other city weather/forecast through a search bar
 
-## Preview
+## :camera: Preview
 ![Screenshot 2023-10-30 at 02 33 17](https://github.com/ehelgueroc/weatherapp/assets/10067295/b1d535a9-9348-444f-9162-f90dad506fcd)
 
-## Stack
+## :rainbow: Stack
 - **Frontend:**
   - ReactJS, Vite, Typescript, Tailwind, Jest, React Testing library
 - **Backend:**
   - NestJS, Typescript
- 
-## Run the app
 
-## Configure
+## :hand: Steps before running the app
+
 You need to create an .env file on the client and API folders
 **API**
 - PORT=3000
@@ -21,8 +20,9 @@ You need to create an .env file on the client and API folders
 
 **Client**
 - VITE_WEATHER_API_URL: http://localhost:3000
-     
-### Docker
+
+## :runner: Run the app
+### :whale: Docker
 1. Check you have Docker on your machine
 2. Clone the repository
 3. In you terminal go to the root folder of the cloned repository
@@ -33,7 +33,7 @@ You need to create an .env file on the client and API folders
 8. When it finishe, client and API should be running
 9. Then you can access the client app throught http://localhost:5173
 
-### Run without Docker
+### :oncoming_automobile: Run without Docker
 1. Check you have Node 18.18.0 or greater on your machine
 2. Clone the repository
 3. In the terminal go to the root folder
