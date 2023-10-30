@@ -1,4 +1,4 @@
-name: Lint and Test
+name: API lint and test
 
 on:
   push:
@@ -6,11 +6,9 @@ on:
       - main
     paths:
       - 'api/**'
-      - 'client/**'
   pull_request:
     paths:
       - 'api/**'
-      - 'client/**'
 
 jobs:
   lint-and-test:
@@ -27,15 +25,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         working-directory: api
         run: npm install
 
-      - name: Lint code
+      - name: Lint
         working-directory: api
-        run: npm lint
+        run: npm run lint
 
-      - name: Run tests
+      - name: Tests
         working-directory: api
-        run: npm test
+        run: npm run test
