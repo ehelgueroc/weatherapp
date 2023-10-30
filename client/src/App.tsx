@@ -10,7 +10,6 @@ const App = () => {
     searchTerm,
     isLoading,
     handleOptionSelect,
-    handleFormSubmit,
     handleInputChange,
     handleOnClear,
     getActualPosition,
@@ -28,7 +27,6 @@ const App = () => {
           options={searchOptions}
           onInputChange={handleInputChange}
           onOptionSelect={handleOptionSelect}
-          onSubmit={handleFormSubmit}
           onClear={handleOnClear}
           placeholder="Add city"
         />

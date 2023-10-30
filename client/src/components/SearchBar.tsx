@@ -10,7 +10,6 @@ type SearchBarProps = {
   options: [];
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onOptionSelect: (option: optionType) => void;
-  onSubmit: () => void;
   placeholder?: string;
   onClear: () => void;
 };
