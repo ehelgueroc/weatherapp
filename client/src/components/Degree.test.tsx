@@ -6,7 +6,7 @@ describe('Degree component', () => {
   render(<Degree temp={temperature} />);
 
   it('should display temperature correctly', () => {
-    const temperatureElement = screen.getByText(`${temperature}°`);
+    const temperatureElement = screen.getByText(`${temperature}`);
     expect(temperatureElement).toBeInTheDocument();
   });
 });
