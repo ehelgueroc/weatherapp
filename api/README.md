@@ -1,8 +1,10 @@
 # :waning_crescent_moon: Weather API
-Weather API is the backend of our Weather APP. It is going to expose endpoints to search locations and get weather data.
+This API expose some endpoints to search locations/area and get weather/forecast data.
 
 ## :rainbow: Tech Stack
-Nestjs + Typescript + Swagger
+- Nestjs
+- Typescript
+- Swagger
 
 ## :runner: Run it
 If you want to run this API, you have to follow the steps on this [README](https://github.com/ehelgueroc/weatherapp).
