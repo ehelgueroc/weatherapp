@@ -12,8 +12,8 @@ const useWeatherData = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getActualPosition = useCallback(() => {
+    setIsLoading(true);
     if ('geolocation' in navigator) {
-      setIsLoading(true);
       navigator.geolocation.getCurrentPosition(function (position) {
         const { latitude, longitude } = position.coords;
         getForecast({ name: '', country: '', lat: latitude, lon: longitude });
@@ -31,7 +31,6 @@ const useWeatherData = () => {
       fetch(`${API_URL}/weather/search?locationQuery=${term.trim()}`)
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           setSearchOptions(data);
         })
         .catch(e => console.log({ e }));
