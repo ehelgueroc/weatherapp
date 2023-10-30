@@ -13,6 +13,7 @@ This is a weather app that let the user find the local weather via geolocalizati
 ## :hand: Steps before running the app
 
 You need to create an .env file on the client and API folders
+
 **API**
 - PORT=3000
 - OPENWEATHER_API_KEY= key generated on [openweather page](https://openweathermap.org/api)
