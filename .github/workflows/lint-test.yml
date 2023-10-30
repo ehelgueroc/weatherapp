@@ -28,14 +28,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
+      - name: Lint and test NestJS app
         working-directory: api
-        run: npm install
-
-      - name: Lint code
-        working-directory: api
-        run: npm lint
-
-      - name: Run tests
-        working-directory: api
-        run: npm test
+        run: |
+          npm install
+          npm run lint
+          npm test
