@@ -16,7 +16,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Weather API')
     .setDescription(
-      'Weather API to search for cities and get forecast for each one of them',
+      'Weather API to search for cities and get forecast for each city',
     )
     .setVersion('1.0')
     .build();
